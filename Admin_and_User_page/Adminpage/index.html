@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <!-- for the whole container  -->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid topbar">
+          <a class="navbar-brand active" href="#">
+            <i class="lni lni-trees"> </i>Leafy Loft</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Quick Books</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Notifications
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">New Orders (28)</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Low Stock Alert: Ficus</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >New Customer Message (9)</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Others</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="false">Calendar</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div id="dashnav">
+        <!-- for sidebar and dashboard -->
+        <div class="col-2">
+          <!-- for sidebar only -->
+          <div class="sidebar">
+            <div class="sidenavlogo">
+              <button id="sidenavbtn" type="button">
+                <i class="lni lni-trees"></i>
+              </button>
+              <a href="#"> Leafy Loft</a>
+            </div>
+            <div class="card admin-card">
+              <img
+                src="../img/big leaf wall.jpg"
+                class="card-img-top"
+                alt="Cat with fall leafs"
+              />
+              <div class="card-body">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle adminbtn"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Thembi
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Switch Account</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Account Settings</a>
+                    </li>
+                  </ul>
+                </div>
+                <p class="card-text">Administrator</p>
+              </div>
+            </div>
+
+            <ul class="sidebar1">
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-home icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-list icon"></i>
+                  <span>Inventory Management</span>
+                </a>
+              </li>
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-users icon"></i>
+                  <span>Customer Management</span>
+                </a>
+              </li>
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-coin icon"></i>
+                  <span>Sales Analytics</span>
+                </a>
+              </li>
+              <li class="sidenav-item">
+                <a
+                  href="#"
+                  class="sidebar-link has-dropdown collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#order"
+                  aria-expanded="false"
+                  aria-controls="order"
+                >
+                  <i class="lni lni-package icon"></i>
+                  <span>Orders</span>
+                </a>
+                <ul
+                  id="order"
+                  class="sidebar-dropdown list-unstyled collapse"
+                  data-bs-parent="sidebar"
+                >
+                  <li>New Orders</li>
+                  <li>Processing</li>
+                  <li>Shipped</li>
+                  <li>Completed</li>
+                  <li>Returns</li>
+                </ul>
+              </li>
+              
+              <li class="sidenav-item">
+                <a
+                  href="#"
+                  class="sidebar-link has-dropdown collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#order"
+                  aria-expanded="false"
+                  aria-controls="order"
+                >
+                  <i class="lni lni-users icon"></i>
+                  <span>Employees</span>
+                </a>
+                <ul
+                  id="employee"
+                  class="sidebar-dropdown list-unstyled collapse"
+                  data-bs-parent="sidebar"
+                >
+                  <li>Employee Schedule</li>
+                  <li> Payment Processing</li>
+                  <li>Contracts</li>
+                  <li>Information</li>
+                  <li>Performance</li>
+                </ul>
+              </li>
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-trees icon"></i>
+                  <span>Suppliers</span>
+                </a>
+              </li>
+              <li class="sidenav-item">
+                <a href="#">
+                  <i class="lni lni-cog icon"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-10">
+          <!-- dashboard will go here  -->
+
+          <div class="main-container">
+            <div class="year-stats">
+              <div class="month-group">
+                <div class="bar h-100"></div>
+                <p class="month">Jan</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-50"></div>
+                <p class="month">Feb</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-75"></div>
+                <p class="month">Mar</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-25"></div>
+                <p class="month">Apr</p>
+              </div>
+              <div class="month-group selected">
+                <div class="bar h-100"></div>
+                <p class="month">May</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-50"></div>
+                <p class="month">Jun</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-75"></div>
+                <p class="month">Jul</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-25"></div>
+                <p class="month">Aug</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-50"></div>
+                <p class="month">Sep</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-75"></div>
+                <p class="month">Oct</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-25"></div>
+                <p class="month">Nov</p>
+              </div>
+              <div class="month-group">
+                <div class="bar h-100"></div>
+                <p class="month">Dez</p>
+              </div>
+            </div>
+
+            <div class="stats-info">
+              <div class="graph-container">
+                <div class="percent">
+                  <svg viewBox="0 0 36 36" class="circular-chart">
+                    <path
+                      class="circle"
+                      stroke-dasharray="100, 100"
+                      d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <path
+                      class="circle"
+                      stroke-dasharray="85, 100"
+                      d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <path
+                      class="circle"
+                      stroke-dasharray="60, 100"
+                      d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                    <path
+                      class="circle"
+                      stroke-dasharray="30, 100"
+                      d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+                    />
+                  </svg>
+                </div>
+                <p>Total: $9,075</p>
+              </div>
+
+              <div class="info">
+                <p>Most expensive category <br /><span>Inventory</span></p>
+                <p>Updated categories <span>2</span></p>
+                <p>Bonus payments <span>$92</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="checklist">
+            <div class="form-check">
+              <h3>To-Dos</h3>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Order New Inventory
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                checked
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Interview Candidates
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Meeting with Managers
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                checked
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Store Inspection
+              </label>
+            </div>
+          </div>
+          <table class="table supplierlist">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Suppliers</th>
+                <th scope="col">Manager</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>TreesR'US</td>
+                <td>Maria</td>
+                <td>Midland</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jay's Greenary</td>
+                <td>Jacob</td>
+                <td>Auburn</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Brunch Bird</td>
+                <td>Thornhill</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
